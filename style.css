@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* HEADER SECTION  */
+.header-container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 28px 0;
+  /* background-color: red; */
+  display: grid;
+  grid-template-columns: 670px 246px;
+  justify-content: space-between;
+}
+
+.header-container--left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-container--left > svg:first-child {
+  width: 150px;
+  height: 40px;
+}
+
+.header-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #bbbababf;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 0 4px 0 20px;
+  font-size: 14px;
+}
+
+.header-button:hover {
+  background-color: #f5f5f5;
+  border-color: transparent;
+}
+
+.header-button > svg:last-child {
+  transition: all 0.3s ease-in-out;
+}
+
+.header-button:hover > svg:last-child {
+  transform: rotate(180deg);
+}
+
+.header-button > svg {
+  width: 20px;
+}
+
+.header-button > svg:first-child {
+  fill: #3a8dd3;
+}
+
+.header-btn {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.header-btn:hover {
+  color: #2673b3;
+}
+
+.header-container--right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}
+
+.header-call {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+  transition: all 0.1s ease-in-out;
+  font-size: 14px;
+}
+
+.header-call:hover {
+  color: rgb(0, 0, 0);
+}
+
+.header-call > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.header-call > span > svg {
+  width: 20px;
+  fill: rgba(0, 0, 0, 0.4);
+  transition: all 0.1s ease-in-out;
+}
+
+.header-call:hover > span > svg {
+  fill: rgb(0, 0, 0);
+}
+
+.header-container--right > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid #bbbababf;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.header-container--right > button > span {
+  height: 20px;
+}
+
+.header-container--right > button > span:last-child {
+  height: 16px;
+}
+
+/* .header-container--right > button:hover > span:last-child {
+  display: none;
+} */
+
+.header-container--right > button > span > svg {
+  width: 20px;
+  fill: rgba(0, 0, 0, 0.4);
+}
+
+/* PRODUCTS SECTION */
+.products-slide {
+  width: 1344px;
+  margin: 0 auto;
+  background-color: #00c4e5;
+  border-radius: 16px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.slide-container {
+  display: grid;
+  grid-template-columns: repeat(2, 600px);
+  padding-bottom: 60px;
+}
+
+.container--left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  color: white;
+}
+
+.container--left > h2 {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.container--left > p {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 300;
+}
+
+.container--right > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .header-container {
+    width: 90%;
+    padding: 20px 0;
+  }
+
+  .header-container--right > button > span:last-child {
+    display: none;
+  }
+
+  .header-container--right {
+    gap: 8px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header-container {
+    width: 90%;
+    padding: 20px 0;
+    grid-template-columns: 1fr 1fr;
+  }
+  .header-container--left > button {
+    display: none;
+  }
+
+  .header-container--right {
+    gap: 8px;
+  }
+
+  .header-container--right > button > span:last-child {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header-container {
+    width: 80%;
+    padding: 10px 0;
+    grid-template-columns: 1fr 1fr;
+  }
+  .header-container--left > button {
+    display: none;
+  }
+
+  .header-container--right {
+    gap: 8px;
+  }
+
+  .header-container--right > button > span:last-child {
+    display: none;
+  }
+}
