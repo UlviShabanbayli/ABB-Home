@@ -38,7 +38,7 @@ body {
 .header-button {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   gap: 10px;
   padding: 8px 16px;
   border-radius: 8px;
@@ -138,17 +138,12 @@ body {
   height: 16px;
 }
 
-/* .header-container--right > button:hover > span:last-child {
-  display: none;
-} */
-
 .header-container--right > button > span > svg {
   width: 20px;
   fill: rgba(0, 0, 0, 0.4);
 }
 
-/* PRODUCTS SECTION */
-
+/* PRODUCTS SLIDES SECTION */
 .products-wrapper {
   position: relative;
 }
@@ -175,7 +170,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 30px;
+  gap: 16px;
   color: white;
 }
 
@@ -185,8 +180,8 @@ body {
 }
 
 .container--left > p {
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 28px;
   font-weight: 300;
 }
 
@@ -204,12 +199,13 @@ body {
   background-color: white;
   border-radius: 12px;
   position: absolute;
-  bottom: 0;
+  bottom: -60px;
   width: 1200px;
+  box-shadow: 2px 2px 12px rgb(178, 178, 178);
 }
 .products-info--left {
   display: flex;
-  gap: 24px;
+  gap: 40px;
 }
 
 .products-info--left > div > h3 {
@@ -219,16 +215,105 @@ body {
 
 .products-info--left > div > p {
   margin-top: 10px;
-  color: #bbbaba;
+  color: #a8a8a8;
 }
 
 .products-info > div:first-child > div:not(:nth-child(4)) {
   border-right: 1px solid #bbbababf;
-  padding-right: 24px;
+  padding-right: 40px;
+}
+
+.products-info--right {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  width: 148px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn.blue {
+  background-color: #2058bb;
+  color: white;
+}
+
+.btn.blue:hover {
+  background-color: #174086;
+}
+
+.btn.gray {
+  background-color: #f2f2f7;
+}
+
+.btn.gray:hover {
+  background-color: #e1e1eb;
+}
+
+.slide-buttons {
+  position: absolute;
+  bottom: -140px;
+  display: flex;
+  gap: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slide-buttons > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e3e8ec;
+}
+
+.slide-buttons > div:first-child,
+.slide-buttons > div:last-child {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.slide-buttons > div:first-child:hover,
+.slide-buttons > div:last-child:hover {
+  background-color: #ededed;
+}
+
+.slide-buttons > div:nth-child(2) {
+  width: 144px;
+  height: 48px;
+  border-radius: 48px;
+
+  gap: 12px;
+}
+.slide-buttons > div:nth-child(2) > div {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #c6c6d0;
+  cursor: pointer;
+}
+
+.slide-buttons > div:nth-child(2) > div.checked {
+  background-color: #2058bb;
 }
 
 /* MEDIA QUERIES */
+@media screen and (min-width: 1280px) and (max-width: 1344px) {
+  .products-slide {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
+  /* HEADER MEDIA */
   .header-container {
     width: 90%;
     padding: 20px 0;
@@ -240,6 +325,72 @@ body {
 
   .header-container--right {
     gap: 8px;
+  }
+
+  /* PRODUCTS MEDIA */
+  .products-slide {
+    width: 100%;
+    border-radius: 0;
+  }
+  .slide-container {
+    width: 912px;
+    grid-template-columns: repeat(2, 444px);
+    justify-content: space-between;
+  }
+
+  .container--left > h2 {
+    font-size: 32px;
+  }
+
+  /*  */
+  .info-container {
+    width: 912px;
+  }
+
+  .products-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 22px;
+    width: 912px;
+    bottom: -80px;
+  }
+
+  .slide-buttons {
+    bottom: -160px;
+  }
+
+  .products-info--left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .products-info--left > div {
+    width: 25%;
+  }
+
+  .products-info--left > div > h3 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .products-info--left > div > p {
+    font-size: 14px;
+  }
+
+  .products-info > div:first-child > div:not(:nth-child(4)) {
+    border-right: 1px solid #bbbababf;
+    padding-right: 0;
+  }
+
+  .products-info--right {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .btn {
+    width: 50%;
   }
 }
 
@@ -260,6 +411,8 @@ body {
   .header-container--right > button > span:last-child {
     display: block;
   }
+
+  /* PRODUCTS MEDIA */
 }
 
 @media screen and (max-width: 767px) {
@@ -279,4 +432,6 @@ body {
   .header-container--right > button > span:last-child {
     display: none;
   }
+
+  /* PRODUCTS MEDIA */
 }
