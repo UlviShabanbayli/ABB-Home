@@ -1405,6 +1405,10 @@ hr {
     display: none;
   }
 
+  .menu {
+    display: flex;
+  }
+
   /* PRODUCTS MEDIA */
 
   .products-slide {
@@ -1621,6 +1625,9 @@ hr {
 
   .header-container--right > button > span:last-child {
     display: none;
+  }
+  .menu {
+    display: flex;
   }
 
   /* PRODUCTS MEDIA */
